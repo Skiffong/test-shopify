@@ -1,1 +1,228 @@
 /* Смотри сколько снизу свободного места! Оно идеально подойдёт, чтобы писать твои стили! */
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --text_color: #2F2F2F;
+  --hover_color: #42940F;
+  --active_color: #1F5200;
+  --disabled_color: #4E4E4E;
+  --new_color: #FDCFF3;
+  --last_color: #FFCF56;
+}
+
+body {
+  font-family: 'Arial';
+  font-style: normal;
+  box-sizing: border-box;
+  color: var(--text_color);
+}
+
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.products__title {
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 72px;
+  text-align: center;
+}
+
+.products__content {
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 33%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  box-shadow: 0px 0px 45px -4px rgba(0, 0, 0, 0.18);
+  border-radius: 12px;
+}
+
+.card:last-child {
+  margin-right: 0;
+}
+
+.card__img {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  border: 1px solid var(--black);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.card:last-child .card__img {
+  filter: none;
+  border: none;
+}
+
+.card:first-child .card__img {
+  filter: none;
+}
+
+.card__tag {
+  text-transform: uppercase;
+  position: absolute;
+  left: 16px;
+  top: 16px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.card__tag span {
+  border-radius: 8px;
+  padding: 3px 16px;
+  font-size: 16px;
+  line-height: 24px;
+  cursor: default;
+}
+
+.new {
+  background: var(--new_color);
+}
+
+.last {
+  background: var(--last_color);
+  margin-left: 16px;
+}
+
+.card__title {
+  margin: 24px 24px 0 24px;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.card__text {
+  margin: 16px 24px;
+  font-size: 16px;
+  line-height: 24px;
+  flex: 1 0 auto;
+}
+
+.card__btn {
+  margin: 24px;
+  border: 2px solid var(--hover_color);
+  border-radius: 8px;
+  padding: 10px 0;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 25px;
+  color: var(--hover_color);
+  cursor: pointer;
+}
+
+.card__btn:hover.disabled,
+.card__btn:active.disabled,
+.card__btn.disabled {
+  background: var(--disabled_color);
+  color: var(--white);
+  border: 1px solid var(--disabled_color);
+  cursor: auto;
+}
+
+.card__btn:hover {
+  background: var(--hover_color);
+  border: 2px solid var(--hover_color);
+  color: var(--white);
+}
+
+.card__btn:active {
+  color: var(--white);
+  background: var(--active_color);
+  border: 2px solid var(--active_color);
+}
+
+@media screen and (max-width: 992px) {
+  .card__tag span {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .card__title {
+    margin: 18px;
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .card__text {
+    margin: 0 18px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    margin-right: 10px;
+  }
+
+  .card__tag {
+    left: 5px;
+    top: 5px;
+  }
+
+  .card__tag span {
+    padding: 2px 10px;
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .last {
+    margin-left: 8px;
+  }
+
+  .card__title {
+    margin: 10px;
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .card__text {
+    margin: 0 10px;
+  }
+
+  .card__btn {
+    margin: 10px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .products__title {
+    font-size: 26px;
+    line-height: 40px;
+  }
+
+  .products__content {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .card__tag {
+    left: 16px;
+    top: 16px;
+  }
+
+  .card__tag span {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .last {
+    margin-left: 16px;
+  }
+}
