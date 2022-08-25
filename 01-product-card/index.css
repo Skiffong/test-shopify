@@ -118,6 +118,7 @@ body {
   line-height: 25px;
   color: var(--hover_color);
   cursor: pointer;
+  transition: all 0.5s ease 0s;
 }
 
 .card__btn:hover.disabled,
